@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:test_app_food/domain/models/category.dart';
-part 'category.g.dart';
+part 'api_category.g.dart';
 
 @JsonSerializable()
 class ApiCategory{

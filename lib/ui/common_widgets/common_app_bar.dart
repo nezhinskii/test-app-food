@@ -23,7 +23,7 @@ class CommonAppBar extends AppBar {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
-            Text("Санкт-Петербург", style: AppTextStyles.main500,),
+            Text("Санкт-Петербург", style: AppTextStyles.fontW500,),
             Text("12 Августа, 2023", style: AppTextStyles.date,)
           ],
         ),

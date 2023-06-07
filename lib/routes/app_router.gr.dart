@@ -9,6 +9,8 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
+import 'package:test_app_food/domain/models/category.dart' as _i10;
 import 'package:test_app_food/routes/app_router.dart' as _i1;
 import 'package:test_app_food/ui/pages/account_page/account_page.dart' as _i2;
 import 'package:test_app_food/ui/pages/cart_page/cart_page.dart' as _i3;
@@ -41,9 +43,13 @@ abstract class $AppRouter extends _i8.RootStackRouter {
       );
     },
     CategoryRoute.name: (routeData) {
+      final args = routeData.argsAs<CategoryRouteArgs>();
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.CategoryPage(),
+        child: _i4.CategoryPage(
+          key: args.key,
+          category: args.category,
+        ),
       );
     },
     HomeRoute.name: (routeData) {
@@ -111,16 +117,40 @@ class CartRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.CategoryPage]
-class CategoryRoute extends _i8.PageRouteInfo<void> {
-  const CategoryRoute({List<_i8.PageRouteInfo>? children})
-      : super(
+class CategoryRoute extends _i8.PageRouteInfo<CategoryRouteArgs> {
+  CategoryRoute({
+    _i9.Key? key,
+    required _i10.Category category,
+    List<_i8.PageRouteInfo>? children,
+  }) : super(
           CategoryRoute.name,
+          args: CategoryRouteArgs(
+            key: key,
+            category: category,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'CategoryRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static const _i8.PageInfo<CategoryRouteArgs> page =
+      _i8.PageInfo<CategoryRouteArgs>(name);
+}
+
+class CategoryRouteArgs {
+  const CategoryRouteArgs({
+    this.key,
+    required this.category,
+  });
+
+  final _i9.Key? key;
+
+  final _i10.Category category;
+
+  @override
+  String toString() {
+    return 'CategoryRouteArgs{key: $key, category: $category}';
+  }
 }
 
 /// generated route for

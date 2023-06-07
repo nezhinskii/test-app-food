@@ -40,7 +40,7 @@ class MainPage extends StatelessWidget {
                   error: (message) => Center(
                     child: Text(
                       message,
-                      style: AppTextStyles.main500,
+                      style: AppTextStyles.fontW500,
                       textAlign: TextAlign.center,
                     ),
                   )

@@ -1,5 +1,5 @@
 import 'package:test_app_food/domain/models/category.dart';
-import 'package:test_app_food/data/services/api_sevice.dart';
+import 'package:test_app_food/data/services/api_service.dart';
 import 'package:test_app_food/domain/repositories/categories_repository.dart';
 
 class ApiCategoriesRepository extends CategoriesRepository{

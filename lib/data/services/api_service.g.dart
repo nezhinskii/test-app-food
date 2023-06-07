@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_sevice.dart';
+part of 'api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -43,6 +43,33 @@ class _RestClient implements RestClient {
         k,
         (v as List)
             .map((i) => ApiCategory.fromJson(i as Map<String, dynamic>))
+            .toList()));
+    return value;
+  }
+
+  @override
+  Future<Map<String, List<ApiDish>>> getDishes() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Map<String, List<ApiDish>>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/c7a508f2-a904-498a-8539-09d96785446e',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!.map((k, dynamic v) => MapEntry(
+        k,
+        (v as List)
+            .map((i) => ApiDish.fromJson(i as Map<String, dynamic>))
             .toList()));
     return value;
   }

@@ -14,7 +14,6 @@ class MainCubit extends Cubit<MainState> {
   final CategoriesRepository _categoriesRepository;
 
   void getCategories() async {
-    emit(const MainState.loading());
     try{
       final categories = await _categoriesRepository.getCategories();
       emit(MainState.success(categories));
