@@ -12,10 +12,10 @@ import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:test_app_food/routes/app_router.dart' as _i1;
 import 'package:test_app_food/ui/pages/account_page/account_page.dart' as _i2;
 import 'package:test_app_food/ui/pages/cart_page/cart_page.dart' as _i3;
-import 'package:test_app_food/ui/pages/category_page/category_page.dart' as _i7;
-import 'package:test_app_food/ui/pages/home.dart' as _i4;
-import 'package:test_app_food/ui/pages/main_page/main_page.dart' as _i5;
-import 'package:test_app_food/ui/pages/search_page/search_page.dart' as _i6;
+import 'package:test_app_food/ui/pages/category_page/category_page.dart' as _i4;
+import 'package:test_app_food/ui/pages/home.dart' as _i5;
+import 'package:test_app_food/ui/pages/main_page/main_page.dart' as _i6;
+import 'package:test_app_food/ui/pages/search_page/search_page.dart' as _i7;
 
 abstract class $AppRouter extends _i8.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -40,28 +40,28 @@ abstract class $AppRouter extends _i8.RootStackRouter {
         child: const _i3.CartPage(),
       );
     },
+    CategoryRoute.name: (routeData) {
+      return _i8.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.CategoryPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.HomePage(),
+        child: const _i5.HomePage(),
       );
     },
     MainRoute.name: (routeData) {
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.MainPage(),
+        child: const _i6.MainPage(),
       );
     },
     SearchRoute.name: (routeData) {
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.SearchPage(),
-      );
-    },
-    CategoryRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i7.CategoryPage(),
+        child: const _i7.SearchPage(),
       );
     },
   };
@@ -110,7 +110,21 @@ class CartRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.HomePage]
+/// [_i4.CategoryPage]
+class CategoryRoute extends _i8.PageRouteInfo<void> {
+  const CategoryRoute({List<_i8.PageRouteInfo>? children})
+      : super(
+          CategoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CategoryRoute';
+
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i5.HomePage]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
       : super(
@@ -124,7 +138,7 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.MainPage]
+/// [_i6.MainPage]
 class MainRoute extends _i8.PageRouteInfo<void> {
   const MainRoute({List<_i8.PageRouteInfo>? children})
       : super(
@@ -138,7 +152,7 @@ class MainRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.SearchPage]
+/// [_i7.SearchPage]
 class SearchRoute extends _i8.PageRouteInfo<void> {
   const SearchRoute({List<_i8.PageRouteInfo>? children})
       : super(
@@ -147,20 +161,6 @@ class SearchRoute extends _i8.PageRouteInfo<void> {
         );
 
   static const String name = 'SearchRoute';
-
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i7.CategoryPage]
-class CategoryRoute extends _i8.PageRouteInfo<void> {
-  const CategoryRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          CategoryRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'CategoryRoute';
 
   static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
