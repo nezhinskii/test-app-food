@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_app_food/routes/app_router.gr.dart';
+import 'package:test_app_food/ui/pages/cart_page/cubit/cart_cubit.dart';
 import 'package:test_app_food/ui/utils/app_colors.dart';
 
 @RoutePage()
@@ -16,47 +18,50 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      backgroundColor: AppColors.background,
-      routes: const [
-        MainRoute(),
-        SearchRoute(),
-        CartRoute(),
-        AccountRoute(),
-      ],
-      bottomNavigationBuilder: (_, tabsRouter) =>
-        BottomNavigationBar(
-          backgroundColor: AppColors.background,
-          selectedFontSize: 10,
-          unselectedFontSize: 10,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.main,
-          unselectedItemColor: AppColors.inactive,
-          currentIndex: tabsRouter.activeIndex,
-          onTap: tabsRouter.setActiveIndex,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Главная',
-              icon: SvgPicture.asset(_homeIconPath, colorFilter: _inactiveFilter,),
-              activeIcon: SvgPicture.asset(_homeIconPath, colorFilter: _activeFilter)
-            ),
-            BottomNavigationBarItem(
-              label: 'Поиск',
-              icon: SvgPicture.asset(_searchIconPath, colorFilter: _inactiveFilter,),
-              activeIcon: SvgPicture.asset(_searchIconPath, colorFilter: _activeFilter)
-            ),
-            BottomNavigationBarItem(
-              label: 'Корзина',
-              icon: SvgPicture.asset(_cartIconPath, colorFilter: _inactiveFilter,),
-              activeIcon: SvgPicture.asset(_cartIconPath, colorFilter: _activeFilter)
-            ),
-            BottomNavigationBarItem(
-              label: 'Аккаунт',
-              icon: SvgPicture.asset(_accountIconPath, colorFilter: _inactiveFilter,),
-              activeIcon: SvgPicture.asset(_accountIconPath, colorFilter: _activeFilter)
-            )
-          ]
-        ),
+    return BlocProvider<CartCubit>(
+      create: (context) => CartCubit(),
+      child: AutoTabsScaffold(
+        backgroundColor: AppColors.background,
+        routes: const [
+          MainRoute(),
+          SearchRoute(),
+          CartRoute(),
+          AccountRoute(),
+        ],
+        bottomNavigationBuilder: (_, tabsRouter) =>
+          BottomNavigationBar(
+            backgroundColor: AppColors.background,
+            selectedFontSize: 10,
+            unselectedFontSize: 10,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: AppColors.main,
+            unselectedItemColor: AppColors.inactive,
+            currentIndex: tabsRouter.activeIndex,
+            onTap: tabsRouter.setActiveIndex,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Главная',
+                icon: SvgPicture.asset(_homeIconPath, colorFilter: _inactiveFilter,),
+                activeIcon: SvgPicture.asset(_homeIconPath, colorFilter: _activeFilter)
+              ),
+              BottomNavigationBarItem(
+                label: 'Поиск',
+                icon: SvgPicture.asset(_searchIconPath, colorFilter: _inactiveFilter,),
+                activeIcon: SvgPicture.asset(_searchIconPath, colorFilter: _activeFilter)
+              ),
+              BottomNavigationBarItem(
+                label: 'Корзина',
+                icon: SvgPicture.asset(_cartIconPath, colorFilter: _inactiveFilter,),
+                activeIcon: SvgPicture.asset(_cartIconPath, colorFilter: _activeFilter)
+              ),
+              BottomNavigationBarItem(
+                label: 'Аккаунт',
+                icon: SvgPicture.asset(_accountIconPath, colorFilter: _inactiveFilter,),
+                activeIcon: SvgPicture.asset(_accountIconPath, colorFilter: _activeFilter)
+              )
+            ]
+          ),
+      ),
     );
   }
 }

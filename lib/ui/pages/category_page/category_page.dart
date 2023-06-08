@@ -27,7 +27,7 @@ class CategoryPage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back_ios, color: Colors.black, size: 18,),
+            Icons.arrow_back_ios, color: AppColors.icons, size: 18,),
           onPressed: () {
             context.router.pop();
           },

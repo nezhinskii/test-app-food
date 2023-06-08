@@ -10,4 +10,5 @@ abstract class AppColors{
   static const fontWithOpacity4 = Color.fromRGBO(0, 0, 0, 0.4);
   static const fontWithOpacity65 = Color.fromRGBO(0, 0, 0, 0.65);
   static const icons = Color(0xFF000000);
+  static const cartActionBackground = Color(0xFFEFEEEC);
 }

@@ -1,7 +1,8 @@
 typedef Tag = String;
+typedef DishId = int;
 
 class Dish{
-  final int id;
+  final DishId id;
   final String name, description, imageUrl;
   final double price, weight;
   final List<Tag> tags;
@@ -14,4 +15,10 @@ class Dish{
     required this.imageUrl,
     required this.tags
   });
+
+  @override
+  bool operator ==(Object other) => other is Dish && id == other.id;
+
+  @override
+  int get hashCode => id.hashCode;
 }
