@@ -12,7 +12,7 @@ ApiDish _$ApiDishFromJson(Map<String, dynamic> json) => ApiDish(
       price: (json['price'] as num).toDouble(),
       weight: (json['weight'] as num).toDouble(),
       description: json['description'] as String,
-      imageUrl: json['image_url'] as String?,
+      imageUrl: json['image_url'] as String,
       tags: (json['tegs'] as List<dynamic>).map((e) => e as String).toList(),
     );
 

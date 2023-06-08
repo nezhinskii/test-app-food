@@ -9,8 +9,7 @@ class ApiDish{
   final String name;
   final String description;
   @JsonKey(name: 'image_url')
-  // В одном из блюд в педоставленом json нет ключа image_url, а по ключу description как раз ссылка на картинку, поэтому сделал nullable поле
-  final String? imageUrl;
+  final String imageUrl;
   final double price, weight;
   @JsonKey(name: 'tegs')
   final List<String> tags;
@@ -20,7 +19,7 @@ class ApiDish{
     required this.price,
     required this.weight,
     required this.description,
-    this.imageUrl,
+    required this.imageUrl,
     required this.tags
   });
   factory ApiDish.fromJson(Map<String, dynamic> json) => _$ApiDishFromJson(json);
@@ -30,8 +29,7 @@ class ApiDish{
     name: name,
     price: price,
     weight: weight,
-    // По той же причине, что nullable полe image_url
-    imageUrl: imageUrl ?? description,
+    imageUrl: imageUrl,
     tags: tags
   );
 }

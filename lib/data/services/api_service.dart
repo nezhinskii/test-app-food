@@ -11,6 +11,6 @@ abstract class RestClient{
   @GET("/058729bd-1402-4578-88de-265481fd7d54")
   Future<Map<String, List<ApiCategory>>> getCategories();
 
-  @GET("/c7a508f2-a904-498a-8539-09d96785446e")
+  @GET("/aba7ecaa-0a70-453b-b62d-0e326c859b3b")
   Future<Map<String, List<ApiDish>>> getDishes();
 }
