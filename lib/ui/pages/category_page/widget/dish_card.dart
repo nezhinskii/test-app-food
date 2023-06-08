@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_app_food/domain/models/dish.dart';
 import 'package:test_app_food/ui/common_widgets/app_text_button.dart';
+import 'package:test_app_food/ui/common_widgets/network_image_with_loader.dart';
 import 'package:test_app_food/ui/pages/cart_page/cubit/cart_cubit.dart';
 import 'package:test_app_food/ui/pages/category_page/widget/small_card_button.dart';
 import 'package:test_app_food/ui/utils/app_colors.dart';
@@ -50,7 +51,7 @@ class DishCard extends StatelessWidget {
                         child: SizedBox(
                           height: cardWidth * 0.7,
                           width: cardWidth * 0.6,
-                          child: Image.network(dish.imageUrl)
+                          child: NetworkImageWithLoader(url: dish.imageUrl,)
                         ),
                       ),
                       Align(

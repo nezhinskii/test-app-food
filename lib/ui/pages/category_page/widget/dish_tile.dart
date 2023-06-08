@@ -39,7 +39,7 @@ class DishTile extends StatelessWidget {
               child: SizedBox(
                 height: tileWidth * 0.8,
                 width: tileWidth * 0.8,
-                child: NetworkImageWithLoader(url: dish.imageUrl, height: 110)
+                child: NetworkImageWithLoader(url: dish.imageUrl,)
               ),
             ),
           ),
