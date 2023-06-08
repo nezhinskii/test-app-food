@@ -76,7 +76,6 @@ class CategoryPage extends StatelessWidget {
                           crossAxisCount: 3,
                           crossAxisSpacing: 5,
                           mainAxisSpacing: 5,
-                          mainAxisExtent: 150,
                           childAspectRatio: 110/150
                         ),
                         itemCount: dishes.length,

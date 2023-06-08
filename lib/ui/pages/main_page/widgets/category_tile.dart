@@ -20,7 +20,7 @@ class CategoryTile extends StatelessWidget {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: NetworkImageWithLoader(url: category.imageUrl, height: 148,)
             ),
             Padding(

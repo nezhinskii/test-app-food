@@ -19,8 +19,8 @@ class NetworkImageWithLoader extends StatelessWidget {
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
         return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             color: AppColors.secondBackground
           ),
           height: height,

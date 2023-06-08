@@ -21,7 +21,7 @@ class TagTile extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: isActive ? AppColors.main : AppColors.secondBackground
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),

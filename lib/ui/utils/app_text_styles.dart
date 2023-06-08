@@ -13,7 +13,17 @@ abstract class AppTextStyles{
       fontSize: 14
   );
   static const date = TextStyle(
-    color: AppColors.fontWithOpacity,
+    color: AppColors.fontWithOpacity5,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
+  static const dishWeight = TextStyle(
+    color: AppColors.fontWithOpacity4,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
+  static const dishDescription = TextStyle(
+    color: AppColors.fontWithOpacity65,
     fontWeight: FontWeight.w400,
     fontSize: 14,
   );
