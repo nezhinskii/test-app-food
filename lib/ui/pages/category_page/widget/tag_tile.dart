@@ -20,7 +20,6 @@ class TagTile extends StatelessWidget {
           context.read<CategoryCubit>().changeTag(tag);
         },
         child: Container(
-          height: 35,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: isActive ? AppColors.main : AppColors.secondBackground

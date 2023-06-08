@@ -10,20 +10,21 @@ class DishTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tileWidth = (MediaQuery.of(context).size.width - 48) / 3;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           height: 105,
-          width: (MediaQuery.of(context).size.width - 48) / 3,
+          width: tileWidth,
           decoration: BoxDecoration(
             color: AppColors.secondBackground,
             borderRadius: BorderRadius.circular(10)
           ),
           child: Center(
             child: SizedBox(
-              height: 90,
-              width: 90,
+              height: tileWidth * 0.8,
+              width: tileWidth * 0.8,
               child: NetworkImageWithLoader(url: dish.imageUrl, height: 110)
             ),
           ),
