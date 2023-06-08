@@ -37,4 +37,14 @@ class CategoryCubit extends Cubit<CategoryState> {
       emit(const CategoryState.error(AppStrings.networkError));
     }
   }
+
+  void changeTag(Tag newTag){
+    emit(
+      CategoryState.success(
+        _dishes.where((dish) => dish.tags.contains(newTag)).toList(),
+        _tags,
+        newTag
+      )
+    );
+  }
 }
